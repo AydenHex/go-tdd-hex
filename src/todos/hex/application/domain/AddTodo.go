@@ -1,6 +1,8 @@
 package domain
 
-import "github.com/aydenhex/go-tdd-hex/service/todos/hex/application/domain/todo/value"
+import (
+	"github.com/aydenhex/go-tdd-hex/service/todos/hex/application/domain/todo/value"
+)
 
 type AddTodo struct {
 	todoID value.TodoID

@@ -1,8 +1,8 @@
 package domain
 
 import (
-	"github.com/aydenhex/go-tdd-hex/service/shared/eventsourcing"
 	"github.com/aydenhex/go-tdd-hex/service/todos/hex/application/domain/todo/value"
+	"github.com/aydenhex/go-tdd-hex/src/shared/eventsourcing"
 )
 
 type TodoAdded struct {
