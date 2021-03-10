@@ -1,0 +1,41 @@
+syntax = "proto3";
+package todogrpc;
+
+import "google/api/annotations.proto";
+
+service Todo {
+    rpc Add(AddRequest) returns (AddResponse) {
+        option (google.api.http) = {
+            post: "/v1/todo"
+            body: "*"
+        };
+    }
+
+    rpc RetrieveView(RetrieveViewRequest) returns (RetrieveViewResponse) {
+        option(google.api.http) = {
+            get: '/v1/todo/{id}'
+        };
+    }
+}
+
+// Add Todo
+
+message AddRequest {
+    string task = 1;
+}
+
+message AddResponse {
+    string id = 1;
+}
+
+// Retrieve Todo View
+
+message RetrieveViewRequest {
+    string id = 1;
+}
+
+message RetrieveViewResponse {
+    string task = 1;
+    bool isDone = 2;
+    uint64 version = 3;
+}
